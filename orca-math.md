@@ -13,6 +13,11 @@ This approach is a distillation of the GPT-4 model, which achieves 97.0% pass@1 
 
 Orca-Math dataset, a synthetic dataset of 200K math problems, is paired with GPT-4-Turbo solutions, showcasing an innovative way to paraphrase existing problems and expand the problem set in both diversity and difficulty.
 
+### Answer extraction
+
+Given a model generated answer, we prompt GPT4 to extract the final short answer and match it with the gold short answer.
+Opinion: This is very costly.
+
 ### Small Model Performance
 
 Small models from other researchers show strong results: Phi-GSM+V Phi-1.5 1.3B+1.3B code achieves 81.5% verify48@1.
