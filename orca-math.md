@@ -16,7 +16,7 @@ Orca-Math dataset, a synthetic dataset of 200K math problems, is paired with GPT
 ### Answer extraction
 
 Given a model generated answer, we prompt GPT4 to extract the final short answer and match it with the gold short answer.
-Opinion: This is very costly.
+**Opinion**: This is very costly.
 
 ### Small Model Performance
 
@@ -24,7 +24,7 @@ Small models from other researchers show strong results: Phi-GSM+V Phi-1.5 1.3B+
 
 ### Innovative Problem Paraphrasing
 
-A good method for paraphrasing problems uses the subsequent prompt:
+**Note:** A good method for paraphrasing problems uses the subsequent prompt:
 
 ```
 Your goal is to create multiple word problems from a given word problem and
@@ -32,15 +32,16 @@ its answer. First, convert the question of the word problem into a statement.
 Then, for each number in the converted problem, create a new word problem.
 ```
 
-This method involves taking any number from the solution and generating a question for this solution.
+**Note:** This method involves taking any number from the solution and generating a question for this solution.
 
 #### Iterative Learning from Both Positive and Negative Signals
 
-We fine-tune Mistral-7B for up to three iterations. In the first iteration, we use supervised fine-tuning to obtain M1. For the second iteration, use the KTO trained model, call this M2, and use M2 to generate the dataset for iteration #3. This approach differs from OVM, which uses just a single iteration to generate labels.
+We fine-tune Mistral-7B for up to three iterations. In the first iteration, we use supervised fine-tuning to obtain M1. For the second iteration, use the KTO trained model, call this M2, and use M2 to generate the dataset for iteration #3. 
+**Note:** This approach differs from OVM, which uses just a single iteration to generate labels.
 
 ##### Positive and Negative Data Generation
 
-Both positive and negative solutions are very important. If the model correctly solved the problem, add negative solutions from other questions.
+**Note:** Both positive and negative solutions are very important. If the model correctly solved the problem, add negative solutions from other questions.
 
 ##### Dataset Details
 
