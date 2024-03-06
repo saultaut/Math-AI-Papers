@@ -8,7 +8,7 @@ Functionalized 41.2% (2060/5000) of the MATH benchmark, with the subset chosen s
 
 **Reasoning gap:** The reasoning gap is the percent decrease in the accuracy between the static and functional variants.
 
-**Gap = 58-80% for SOTA models **
+**Gap = 58-80% for SOTA models**
 
 Example of functionalizing a test is provided in paper. Main idea is to express the QA in controllable python code, which uses python Math librarys to calculate the answers.
 
