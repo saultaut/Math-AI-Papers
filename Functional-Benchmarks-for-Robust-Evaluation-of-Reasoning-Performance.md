@@ -10,6 +10,7 @@ Functionalized 41.2% (2060/5000) of the MATH benchmark, with the subset chosen s
 
  Example of functionalizing a test is provided in paper. Main idea is to express the QA in controllable python code, which uses python Math librarys to calculate the answers.
 
+The problem expressed in the python code:
  ```
 Text problem:
  The letters of the word ‘SIXTEEN’ are randomly arranged.
@@ -21,7 +22,8 @@ def problem(word: str)-> str:
  prb = f"The letters of the word ‘{word}’ are randomly arranged."
  f"What is the probability that the two E’s are not next to each other?"
  return prb
- def solution(word: str)-> str:
+
+def solution(word: str)-> str:
  length = len(word)
  # The numerator is always 2 less than the length of the
  # random string- 2 being the length of the string ’EE’
@@ -31,10 +33,11 @@ def problem(word: str)-> str:
  # Simplifying the fraction
  common_factor = math.gcd(numerator, denominator):
  if common_factor > 1:
- numerator //= common_factor
- denominator //= common_factor
- return f"\\dfrac{{{numerator}}}{{{denominator}}}"
- def inputs(rngs, seed):
+    numerator //= common_factor
+    denominator //= common_factor
+    return f"\\dfrac{{{numerator}}}{{{denominator}}}"
+
+def inputs(rngs, seed):
  rngs.set_seed(seed)
  # The string is made up of three parts, pre + ’EE’ + post
  # We keep the string ’EE’ constant to align with original problem
